@@ -39,7 +39,7 @@ class ApiPlayerCorporation(ApiModel):
     description = models.TextField(blank=True, null=True)
     url = models.URLField(verify_exists=False, blank=True, null=True)
     ceo_character = models.ForeignKey('ApiPlayerCharacter', blank=True, null=True)
-    hq_station = models.ForeignKey(StaStation, blank=True, null=False)
+    hq_station = models.ForeignKey(StaStation, blank=True, null=True)
     alliance = models.ForeignKey('ApiPlayerAlliance', blank=True, null=True)
     alliance_join_date = models.DateField(blank=True, null=True)
     tax_rate = models.FloatField(blank=True, null=True)
