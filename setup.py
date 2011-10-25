@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 from distutils.core import setup
-from eve_api import VERSION
+from eve_api import str_version
 
 LONG_DESCRIPTION = open('README.rst', 'r').read()
 
@@ -17,7 +17,7 @@ CLASSIFIERS = [
 KEYWORDS = 'EVE Online CCP Django API'
 
 setup(name='django-eve_api',
-      version=VERSION,
+      version=str_version,
       description="A wrapper for django-eve around EVE Online's data API.",
       long_description=LONG_DESCRIPTION,
       author='Gregory Taylor',
@@ -25,14 +25,16 @@ setup(name='django-eve_api',
       url='https://github.com/gtaylor/django-eve-api',
       packages=[
           'eve_api',
-          'eve_api.api_puller', 'eve_api.api_puller.account',
-          'eve_api.api_puller.character', 'eve_api.api_puller.corporation',
-          'eve_api.api_puller.eve', 'eve_api.api_puller.map',
-          'eve_api.api_puller.server',
-          'eve_api.management', 'eve_api.management.commands',
+          #'eve_api.api_puller', 'eve_api.api_puller.account',
+          #'eve_api.api_puller.character', 'eve_api.api_puller.corporation',
+          #'eve_api.api_puller.eve', 'eve_api.api_puller.map',
+          #'eve_api.api_puller.server',
+          #'eve_api.management', 'eve_api.management.commands',
           'eve_api.migrations',
           'eve_api.models',
-          'eve_api.tests'
+		  'eve_api.tasks',
+		  'eve_api.templatetags',
+          #'eve_api.tests'
       ],
       requires=['django', 'eve_db', 'eve_proxy'],
       provides=['eve_api'],
