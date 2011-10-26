@@ -154,7 +154,7 @@ def import_apikey_func(api_userid, api_key, user=None, force_cache=False, log=lo
                 update_user_access.delay(account.user.id)
 
     else:
-        auth_params = {'vcode': api_userid, 'keyid': api_key}
+        auth_params = {'userid': api_userid, 'apikey': api_key}
         account_doc = CachedDocument.objects.api_query('/account/Characters.xml.aspx', params=auth_params, no_cache=force_cache)
         doc = basic_xml_parse_doc(account_doc)['eveapi']
 
