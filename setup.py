@@ -36,7 +36,7 @@ setup(name='django-eve_api',
 		  'eve_api.templatetags',
           #'eve_api.tests'
       ],
-      requires=['django', 'eve_db', 'eve_proxy', 'django-celery', 'gargoyle'],
+      requires=['django', 'eve_db', 'eve_proxy', 'djcelery', 'gargoyle'],
       provides=['eve_api'],
       classifiers=CLASSIFIERS,
       keywords=KEYWORDS,
